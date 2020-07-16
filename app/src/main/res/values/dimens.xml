@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <dimen name="elevation_actionbar">4dp</dimen>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="corner_radius_carview">4dp</dimen>
+    <dimen name="padding_cardview">16dp</dimen>
+    <dimen name="tamañofoto">200dp</dimen>
+    <dimen name="margen_izq_IV">5dp</dimen>
+    <dimen name="margen_top_IV">0dp</dimen>
+
+
+</resources>
