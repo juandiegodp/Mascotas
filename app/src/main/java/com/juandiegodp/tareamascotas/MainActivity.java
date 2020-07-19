@@ -1,8 +1,9 @@
-package com.juandiegodp.tareamascotas.pojo;
+    package com.juandiegodp.tareamascotas;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
@@ -13,16 +14,13 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.google.android.material.tabs.TabLayout;
-import com.juandiegodp.tareamascotas.Adapter.PerroAdaptador;
-import com.juandiegodp.tareamascotas.R;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
 
-    ArrayList<Perro> perros;
-    private RecyclerView listaPerros;
+
 
     private Toolbar toolbar;
     private TabLayout tabLayout;
@@ -35,24 +33,17 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        //Mi ActionBar
+        /*Mi ActionBar
         Toolbar miActionBar = (Toolbar) findViewById(R.id.miActionBar);
-        setSupportActionBar(miActionBar);
+        setSupportActionBar(miActionBar);*/
 
         //Casteo
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.miActionBar);
         tabLayout = (TabLayout) findViewById(R.id.tabLayout);
         viewPager = (ViewPager) findViewById(R.id.viewPager);
+        setUpViewPager();
 
         /*
-        listaPerros =(RecyclerView) findViewById(R.id.rvPerros);
-
-        LinearLayoutManager llm =new LinearLayoutManager(this);
-        llm.setOrientation(LinearLayoutManager.VERTICAL);
-
-        listaPerros.setLayoutManager(llm);
-        Dataset();
-        inicializarAdaptador();
 
          */
         if(toolbar != null){
@@ -63,22 +54,22 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void inicializarAdaptador(){
-        PerroAdaptador adaptador = new PerroAdaptador(perros, this);
-        listaPerros.setAdapter(adaptador);
+    private ArrayList<Fragment> agregarFragments(){
+        ArrayList<Fragment> fragments = new ArrayList<>();
+        fragments.add(new fragment_recycler_view());
+        fragments.add(new fragment_perfil());
+
+        return fragments;
     }
-    //Defino mi dataset para generar el Arraylist
-    private void Dataset(){
-        perros = new ArrayList<Perro>();
-        perros.add(new Perro(R.drawable.perro1, "Perruncho1", 0));
-        perros.add(new Perro(R.drawable.perro2, "Perruncho2", 0));
-        perros.add(new Perro(R.drawable.perro3, "Perruncho3",0));
-        perros.add(new Perro(R.drawable.perro4, "Perruncho4", 0));
-        perros.add(new Perro(R.drawable.perro5, "Perruncho5", 0));
-        perros.add(new Perro(R.drawable.perro6, "Perruncho6", 0));
-        perros.add(new Perro(R.drawable.perro7, "Perruncho7", 0));
+
+    private void setUpViewPager(){
+        viewPager.setAdapter(new PageAdapter(getSupportFragmentManager(),agregarFragments()));
+        tabLayout.setupWithViewPager(viewPager);
+        tabLayout.getTabAt(0).setIcon(R.drawable.home);
+        tabLayout.getTabAt(1).setIcon(R.drawable.dog);
 
     }
+
 
     //Uso la Estrella para pasar a la segunda activity
     public void irSengundaActivity(View v){

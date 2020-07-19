@@ -1,4 +1,4 @@
-package com.juandiegodp.tareamascotas.pojo;
+package com.juandiegodp.tareamascotas;
 
 public class Perro {
     int fotoPerro;

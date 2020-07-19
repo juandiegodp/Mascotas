@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,30 +7,53 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <!-- Mi Action Bar -->
-    <include android:id="@+id/miActionBar"
-        layout="@layout/actionbar"
-        ></include>
+    <com.google.android.material.appbar.AppBarLayout
 
-    <!-- Creo el RecyclerView -->
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvPerros"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_centerHorizontal="true"
-        android:padding="@dimen/activity_horizontal_margin"
-        android:layout_below="@id/miActionBar"
-
-        />
-    <!-- Creo el Floating Button de la camara -->
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignBottom="@id/rvPerros"
-        android:src="@drawable/camara"
-        android:layout_margin="16dp"
-        >
-    </com.google.android.material.floatingactionbutton.FloatingActionButton>
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
-</RelativeLayout>
+        <!-- Mi Action Bar-->
+        <include
+            android:id="@+id/miActionBar"
+            layout="@layout/actionbar"
+            ></include>
+
+    <!--
+
+         <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_scrollFlags="scroll|enterAlways"></androidx.appcompat.widget.Toolbar>-->
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+         </com.google.android.material.tabs.TabLayout>
+
+</com.google.android.material.appbar.AppBarLayout>
+
+<androidx.viewpager.widget.ViewPager
+    android:id="@+id/viewPager"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    >
+
+</androidx.viewpager.widget.ViewPager>
+
+<!-- Creo el Floating Button de la camara-->
+<com.google.android.material.floatingactionbutton.FloatingActionButton
+    android:id="@+id/fab_camara"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom|end"
+    android:src="@drawable/camara"
+    android:layout_margin="16dp"
+    />
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

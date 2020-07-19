@@ -1,4 +1,4 @@
-package com.juandiegodp.tareamascotas.pojo;
+package com.juandiegodp.tareamascotas;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -6,9 +6,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
-
-import com.juandiegodp.tareamascotas.Adapter.PerroAdaptador;
-import com.juandiegodp.tareamascotas.R;
 
 import java.util.ArrayList;
 

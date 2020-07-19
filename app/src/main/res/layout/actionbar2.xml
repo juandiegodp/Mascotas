@@ -16,7 +16,7 @@
         android:layout_height="wrap_content"
         android:src="@drawable/huella"
         android:id="@+id/huellaPerro"
-        android:onClick="irActivityMain"
+        android:layout_gravity="left"
         />
 
     <TextView

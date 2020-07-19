@@ -1,4 +1,4 @@
-package com.juandiegodp.tareamascotas.Adapter;
+package com.juandiegodp.tareamascotas;
 
 import android.app.Activity;
 import android.view.LayoutInflater;
@@ -11,9 +11,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.juandiegodp.tareamascotas.R;
-import com.juandiegodp.tareamascotas.pojo.Perro;
 
 import java.util.ArrayList;
 

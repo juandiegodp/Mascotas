@@ -1,3 +1,14 @@
 <resources>
     <string name="nombreApp">PETAGRAM</string>
+    <string name="menu_contacto">Contacto</string>
+    <string name="menu_acercade">Acerca de</string>
+    <string name="encabezadoformulario">INFORMACION REQUERIDA</string>
+    <string name="hint_nombre">Ingrese su Nombre</string>
+    <string name="hint_email">Ingrese su E-mail</string>
+    <string name="hint_mensaje">Ingrese su Mensaje</string>
+    <string name="boton_comentario">Enviar Comentario</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
 </resources>
