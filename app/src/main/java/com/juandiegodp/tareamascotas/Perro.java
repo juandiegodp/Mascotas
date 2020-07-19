@@ -1,22 +1,22 @@
-package com.juandiegodp.tareamascotas;
+package com.juandiegodp.tareamascotas.pojo;
 
 public class Perro {
     int fotoPerro;
     String nombrePerro;
-    String voto;
+    int voto;
 
-    public Perro(int fotoPerro, String nombrePerro, String voto ){
+    public Perro(int fotoPerro, String nombrePerro, int voto ){
         this.fotoPerro = fotoPerro;
         this.nombrePerro = nombrePerro;
         this.voto = voto;
 
     }
 
-    public String getVoto() {
+    public int getVoto() {
         return voto;
     }
 
-    public void setVoto(String voto) {
+    public void setVoto(int voto) {
         this.voto = voto;
     }
 
