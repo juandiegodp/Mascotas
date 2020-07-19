@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragment_perfil">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- TODO: Update blank fragment layout -->
+        <com.mikhaellopez.circularimageview.CircularImageView
+            android:layout_height="wrap_content"
+            android:layout_width="200dp"
+            android:src="@drawable/perro3"
+            android:gravity="center_vertical"
+            app:civ_border="true"
+            app:civ_border_color="#EEEEEE"
+            app:civ_border_width="@dimen/civ_border_width"
+            app:civ_shadow="true"
+            app:civ_shadow_radius="@dimen/civ_border_radius"
+            app:civ_shadow_color="@color/colorAccent"
+            android:layout_gravity="center" />
+
+        <TextView
+            android:id="@+id/tvNombrePerfil"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Perruncho1"
+            android:textStyle="bold"
+            android:gravity="center_vertical"
+            android:visibility="visible"
+            android:textAlignment="center"
+            android:textSize="30sp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/RecyclerView_gridPerfil"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="vertical"
+            android:layout_centerHorizontal="true"/>
+    </LinearLayout>
+
+</FrameLayout>

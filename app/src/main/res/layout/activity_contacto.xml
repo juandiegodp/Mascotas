@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ActivityContacto">
+
+
+    <include android:id="@+id/miActionBar2"
+        layout="@layout/actionbar2"
+        ></include>
+    <TextView
+        android:id="@+id/tvFormulario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/encabezadoformulario"
+        android:layout_below="@id/miActionBar2"
+        ></TextView>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilNombreFormulario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginVertical="@dimen/activity_top_margin"
+        android:layout_below="@id/tvFormulario"
+        >
+        <EditText
+            android:id="@+id/etNombreFormulario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/hint_nombre"
+            android:inputType="textPersonName"
+            android:singleLine="true"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilEmailFormulario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginVertical="@dimen/activity_top_margin"
+        android:layout_below="@id/tilNombreFormulario"
+        >
+        <EditText
+            android:id="@+id/etEmailFormulario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/hint_email"
+            android:inputType="textEmailAddress"
+            android:singleLine="true"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilMensajeFormulario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginVertical="@dimen/activity_top_margin"
+        android:layout_below="@id/tilEmailFormulario"
+        >
+        <EditText
+            android:id="@+id/etMensajeFormulario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/hint_mensaje"
+            android:inputType="textMultiLine"
+            android:gravity="top"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/botonEnviarMensaje"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:text="@string/boton_comentario"
+        android:textSize="18sp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/tilMensajeFormulario"/>
+
+
+
+</RelativeLayout>
