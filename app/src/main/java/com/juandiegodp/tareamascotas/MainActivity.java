@@ -4,7 +4,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
@@ -14,13 +13,13 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.google.android.material.tabs.TabLayout;
+import com.juandiegodp.tareamascotas.Adapter.PageAdapter;
+import com.juandiegodp.tareamascotas.fragment.fragment_perfil;
+import com.juandiegodp.tareamascotas.fragment.fragment_recycler_view;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-
-
-
 
     private Toolbar toolbar;
     private TabLayout tabLayout;
@@ -32,20 +31,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-        /*Mi ActionBar
-        Toolbar miActionBar = (Toolbar) findViewById(R.id.miActionBar);
-        setSupportActionBar(miActionBar);*/
-
         //Casteo
         toolbar = (Toolbar) findViewById(R.id.miActionBar);
         tabLayout = (TabLayout) findViewById(R.id.tabLayout);
         viewPager = (ViewPager) findViewById(R.id.viewPager);
         setUpViewPager();
 
-        /*
-
-         */
         if(toolbar != null){
             setSupportActionBar(toolbar);
             getSupportActionBar().setDisplayHomeAsUpEnabled(false);

@@ -1,4 +1,4 @@
-package com.juandiegodp.tareamascotas;
+package com.juandiegodp.tareamascotas.pojo;
 
 public class perfil {
     int foto;

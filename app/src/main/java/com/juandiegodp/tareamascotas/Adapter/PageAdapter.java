@@ -1,4 +1,4 @@
-package com.juandiegodp.tareamascotas;
+package com.juandiegodp.tareamascotas.Adapter;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -10,6 +10,7 @@ import java.util.ArrayList;
 public class PageAdapter extends FragmentPagerAdapter {
 
     private ArrayList<Fragment> fragments;
+
     public PageAdapter(@NonNull FragmentManager fm, ArrayList<Fragment> fragments) {
         super(fm);
         this.fragments = fragments;

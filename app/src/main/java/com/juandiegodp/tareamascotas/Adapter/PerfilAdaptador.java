@@ -1,4 +1,4 @@
-package com.juandiegodp.tareamascotas;
+package com.juandiegodp.tareamascotas.Adapter;
 
 import android.app.Activity;
 import android.view.LayoutInflater;
@@ -10,6 +10,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.juandiegodp.tareamascotas.R;
+import com.juandiegodp.tareamascotas.pojo.perfil;
 
 import java.util.ArrayList;
 
@@ -30,7 +33,6 @@ public class PerfilAdaptador extends RecyclerView.Adapter<PerfilAdaptador.Perfil
     @Override
     public PerfilViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.cardview_perfil,parent, false);
-
         return new PerfilViewHolder(v);
     }
 

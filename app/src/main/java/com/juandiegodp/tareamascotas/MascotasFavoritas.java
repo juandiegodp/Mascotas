@@ -7,12 +7,18 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
+import com.juandiegodp.tareamascotas.Adapter.PerroAdaptador;
+import com.juandiegodp.tareamascotas.fragment.IRecyclerViewFragmentView;
+import com.juandiegodp.tareamascotas.pojo.Perro;
+import com.juandiegodp.tareamascotas.presentador.IRecyclerViewFragmentPresenter;
+import com.juandiegodp.tareamascotas.presentador.MascotasFavoritasPresenter;
+
 import java.util.ArrayList;
 
-public class MascotasFavoritas extends AppCompatActivity {
+public class MascotasFavoritas extends AppCompatActivity implements IRecyclerViewFragmentView {
 
-    ArrayList<Perro> perros;
     private RecyclerView listaPerros;
+    private MascotasFavoritasPresenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,31 +31,29 @@ public class MascotasFavoritas extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         //Casteo
-        listaPerros =(RecyclerView) findViewById(R.id.rvPerros);
+        listaPerros =(RecyclerView) findViewById(R.id.rvPerrosfav);
 
-        LinearLayoutManager llm =new LinearLayoutManager(this);
-        llm.setOrientation(LinearLayoutManager.VERTICAL);
-
-        listaPerros.setLayoutManager(llm);
-        Dataset();
-        inicializarAdaptador();
-
+        presenter = new MascotasFavoritasPresenter(this,getBaseContext());
 
     }
 
-    public void inicializarAdaptador(){
-        PerroAdaptador adaptador = new PerroAdaptador(perros, this);
+
+    @Override
+    public void generarLinearLayoutVertical() {
+        LinearLayoutManager vista = new LinearLayoutManager(this);
+        vista.setOrientation(LinearLayoutManager.VERTICAL);
+        listaPerros.setLayoutManager(vista);
+    }
+
+    @Override
+    public PerroAdaptador crearAdaptador(ArrayList<Perro> perros) {
+        PerroAdaptador adaptador= new PerroAdaptador(perros, this);
+        return  adaptador;
+    }
+
+    @Override
+    public void inicializarAdaptadorRV(PerroAdaptador adaptador) {
         listaPerros.setAdapter(adaptador);
-    }
-    //Defino mi dataset para generar el Arraylist
-    private void Dataset(){
-        perros = new ArrayList<Perro>();
-        perros.add(new Perro(R.drawable.perro3, "Perruncho3", 0));
-        perros.add(new Perro(R.drawable.perro7, "Perruncho7",0));
-        perros.add(new Perro(R.drawable.perro6, "Perruncho6", 0));
-        perros.add(new Perro(R.drawable.perro4, "Perruncho4", 0));
-        perros.add(new Perro(R.drawable.perro2, "Perruncho2",0));
-
 
     }
 
